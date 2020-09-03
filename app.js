@@ -155,20 +155,28 @@ const navSlide = () => {
     //ToggleNav
     nav.classList.toggle("nav-active");
 
-    //Animate Links
+    //Nav-links
     navLinks.forEach((link, index) => {
-      if (link.style.animation) {
-        link.style.animation = "";
-      } else {
-        link.style.animation = `navLinkFade 0.5s ease forwards ${
-          index / 7 + 0.7
-        }s`;
-      }
+      link.addEventListener("click", () => {
+        nav.classList.remove("nav-active");
+        burger.classList.remove("toggle");
+      });
+      link.style.animation = `navLinkFade 0.5s ease forwards ${
+        index / 7 + 0.7
+      }s`;
     });
+
     //Burger animation
     burger.classList.toggle("toggle");
   });
 };
+
+/*$(".nav-link").on("click", function () {
+  if ($(".nav-links").hasClass("nav-active")) {
+    $(".nav-links").removeClass("nav-active");
+    $(".burger").toggleClass("toggle");
+  }
+});*/
 
 navSlide();
 
