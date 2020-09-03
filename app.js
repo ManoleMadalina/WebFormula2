@@ -171,13 +171,6 @@ const navSlide = () => {
   });
 };
 
-/*$(".nav-link").on("click", function () {
-  if ($(".nav-links").hasClass("nav-active")) {
-    $(".nav-links").removeClass("nav-active");
-    $(".burger").toggleClass("toggle");
-  }
-});*/
-
 navSlide();
 
 /*Pentru slider-stanga*/
