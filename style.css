@@ -197,6 +197,9 @@ form textarea{width:100%;margin:5px 0 15px;background:#ffffff;box-shadow:inset 4
   transition-duration: 490ms;
   -webkit-transform: translate3d(0, -385px, 0);
   transform: translate3d(0, -410px, 0);
+} svg {
+  position: absolute;
+  top: 0;
 } .anim{opacity:0}
 @keyframes anim1{from{transform:translateX(-80px);opacity:0}
 to{transform:translateY(0);opacity:1}}
