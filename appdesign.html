@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Document</title>
+    <title>App Design</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Istok+Web:ital@0;1&family=Montserrat:wght@300;400&display=swap"
       rel="stylesheet"
@@ -22,50 +22,126 @@
         );
       }
       *,
-*::after,
-*::before {
-  box-sizing: border-box;
-}
+      *::after,
+      *::before {
+        box-sizing: border-box;
+      }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  margin: 0;
-}
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p {
+        margin: 0;
+      }
+      .main {
+        overflow: hidden;
+      }
 
-    header {
-  height: fit-content;
-}
-.header-inner{
-  padding: 30px;
-}
-.header-title {
-  font-size: 40px;
-  font-weight: normal;
-  background: -webkit-linear-gradient(#e444ff, #4602d6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  line-height: 40px;
-}
-.header-link{
-  text-decoration: none;
-}
-.first-line {
-  display: flex;
-}
-.intro-logo {
-  width: 42px;
-  height: 42px;
-  margin-left: 7px;
-}
-.intro-logo img {
-  width: 100%;
-  height: 100%;
-}
+      header {
+        width: 100%;
+        padding: 20px 0;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        /*flex-direction: row-reverse;*/
+      }
+      .nav-links {
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        width: 33vw;
+        top: 76px;
+        background-color: rgba(32, 0, 47, 0.9);
+        z-index: 120;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(-300%);
+        transition: transform 0.5s ease-in;
+      }
+      .nav-link {
+        color: rgb(248, 248, 248);
+        text-decoration: none;
+        margin: 1.35em auto;
+        opacity: 0;
+        font-size: 25px;
+        transition: 0.25s;
+      }
+      .nav-link:hover {
+        color: rgb(236, 175, 236);
+      }
+      .nav-link--active {
+        color: rgb(236, 175, 236);
+      }
+      .burger {
+        display: block;
+        margin-left: 30px;
+        cursor: pointer;
+        z-index: 1000;
+      }
+      .burger div {
+        width: 25px;
+        height: 3px;
+        background-color: #f3f3f3;
+        margin: 5px;
+        transition: all 0.3s ease;
+      }
+      .socials {
+        display: flex;
+        z-index: 100;
+      }
+
+      .social-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-decoration: none;
+        width: 36px;
+        height: 36px;
+        margin: 0 20px;
+        border: 1px solid white;
+        border-radius: 50%;
+        transition: color 0.15s linear, background 0.15s linear;
+      }
+
+      .social-icon:hover {
+        color: #c675c4;
+        background-color: white;
+      }
+
+      .nav-active {
+        transform: translateX(-200%);
+      }
+
+      @keyframes navLinkFade {
+        from {
+          opacity: 0;
+          transform: translateX(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0px);
+        }
+      }
+
+      .toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+      }
+
+      .toggle .line2 {
+        opacity: 0;
+      }
+
+      .toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+      }
 
       h1 {
         text-align: center;
@@ -98,7 +174,7 @@ p {
         padding: 0;
         margin: 0;
         padding-top: 15px;
-        z-index: 9999;
+        z-index: 100;
         position: absolute;
         width: 100%;
         margin-top: -40px;
@@ -180,12 +256,12 @@ p {
       }
 
       #progress-bar-container #line {
-        width: 72%;
+        width: 75%;
         margin: auto;
         background: #eee;
         height: 6px;
         position: absolute;
-        left: 10%;
+        left: 7%;
         top: 57px;
         z-index: 1;
         border-radius: 50px;
@@ -209,30 +285,28 @@ p {
         margin: auto;
       }
 
-
-
       #progress-content-section .section-content {
         padding: 30px 40px;
         text-align: center;
         border-radius: 4px;
-        background:#f1f1f1;
+        background: #f1f1f1;
       }
 
-      #progress-content-section #section1{
-        background:#f7e8e8;
+      #progress-content-section #section1 {
+        background: #f7e8e8;
       }
 
-      #progress-content-section #section2{
-        background:#f3f3f3;
+      #progress-content-section #section2 {
+        background: #f3f3f3;
       }
-      #progress-content-section #section3{
-        background:#fdab3e;
+      #progress-content-section #section3 {
+        background: #fdab3e;
       }
 
       #progress-content-section .section-content h2 {
         font-size: 30px;
         text-transform: uppercase;
-        
+
         letter-spacing: 1px;
         margin-bottom: 1em;
       }
@@ -242,18 +316,18 @@ p {
         line-height: 1.8em;
         margin-top: 20px;
       }
-      #progress-content-section .section-content a{
+      #progress-content-section .section-content a {
         font-size: 18px;
-        transition: .15s;
+        transition: 0.15s;
       }
-      #section1 h2, #section1 p{
+      #section1 h2,
+      #section1 p {
         color: rgb(213, 139, 139);
       }
-      #section1 a{
+      #section1 a {
         color: #fff;
-        
       }
-      #section1 a:hover{
+      #section1 a:hover {
         color: rgb(250, 192, 255);
       }
 
@@ -280,24 +354,24 @@ p {
         border-radius: 20px;
         box-shadow: 0px 8px 14px 0px #a580b6;
       }
-      #section1 .image-wrapper img{
+      #section1 .image-wrapper img {
         box-shadow: 0px 8px 14px 0px #ddc1c1ba;
       }
-      #section2 .image-wrapper img{
+      #section2 .image-wrapper img {
         box-shadow: 0px 8px 14px 0px #acacacb0;
       }
-      #section3 .image-wrapper img{
+      #section3 .image-wrapper img {
         box-shadow: 0px 8px 14px 0px #917325b3;
       }
-     
-      #section2 p, #section2 h2{
-        color:rgb(34, 34, 34);
-      }
-      #section2 a{
+
+      #section2 p,
+      #section2 h2 {
         color: rgb(34, 34, 34);
-        
       }
-      #section2 a:hover{
+      #section2 a {
+        color: rgb(34, 34, 34);
+      }
+      #section2 a:hover {
         color: rgb(70, 68, 70);
       }
       .list-icon {
@@ -321,151 +395,189 @@ p {
           opacity: 1;
         }
       }
+      @media only screen and (max-width: 450px) {
+        .nav-links {
+          width: 55vw;
+        }
+      }
     </style>
+    <script
+      src="https://kit.fontawesome.com/1b9a038306.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css"
+      media="all"
+      rel="stylesheet"
+    />
   </head>
   <body>
-     <header>
-        <div class="header-inner">
-          <a class="header-link" href="index.html">
-            <div class="first-line">
-                <p class="header-title">Web</p>
-                <div class="intro-logo">
-                  <img src="Images1/LOGO.png" alt="logo WebFormula" />
-                </div>
-              </div>
-              <p class="header-title">Formula</p></div>
+    <div class="main">
+      <header>
+        <div class="navbar">
+          <div class="nav-links">
+            <a href="index.html" class="nav-link">ACASĂ</a>
+            <a href="appdesign.html" class="nav-link nav-link--active"
+              >APP DESIGN</a
+            >
+            <a href="website.html" class="nav-link">WEBSITES</a>
+            <a href="graphicdesign.html" class="nav-link">GRAPHIC DESIGN</a>
+            <a href="3Dmodels.html" class="nav-link">3D MODELS</a>
+            <a href="webdesign.html" class="nav-link">WEBDESIGN</a>
+          </div>
+
+          <!--Burger-menu-->
+          <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+          </div>
+
+          <div class="socials">
+            <a href="#" class="social-icon">
+              <i class="fab fa-facebook-f"></i>
             </a>
-        </div>
-    </header>
-    <h1>Our Projects</h1>
-    <br />
-    <div class="process-wrapper">
-      <div id="progress-bar-container">
-        <ul>
-          <li class="step step01 active">
-            <div class="list-icon">
-              <img src="Icons/empty.png" alt="" />
-            </div>
-            <div class="step-inner">BEAUTY&CARE</div>
-          </li>
-          <li class="step step02">
-            <div class="list-icon">
-              <img src="Icons/empty.png" alt="" />
-            </div>
-            <div class="step-inner">MUSIC APP</div>
-          </li>
-          <li class="step step03">
-            <div class="list-icon">
-              <img src="Icons/empty.png" alt="" />
-            </div>
-            <div class="step-inner">Smart Watch</div>
-          </li>
-          <li class="step step04">
-            <div class="list-icon">
-              <img src="Icons/empty.png" alt="" />
-            </div>
-            <div class="step-inner">TESTIMONIALS</div>
-          </li>
-          <li class="step step05">
-            <div class="list-icon">
-              <img src="Icons/empty.png" alt="" />
-            </div>
-            <div class="step-inner">OUR LOCATIONS</div>
-          </li>
-          <li class="step step06">
-            <div class="list-icon">
-              <img src="Icons/empty.png" alt="" />
-            </div>
-            <div class="step-inner">OUR LOCATIONS</div>
-          </li>
-        </ul>
-
-        <div id="line">
-          <div id="line-progress"></div>
-        </div>
-      </div>
-
-      <div id="progress-content-section">
-        <div id="section1" class="section-content discovery active">
-          <h2>BEAUTY AND CARE APP</h2>
-          <div class="image-wrapper">
-            <img src="Projects/DoveApp.png" alt="" />
+            <a href="#" class="social-icon">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="mailto: WebFormulaTeam@gmail.com" class="social-icon">
+              <i class="fas fa-at"></i>
+            </a>
           </div>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque
-            justo, consequat non fermentum ac, tempor eu turpis. Proin nulla
-            eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in
-            dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut
-            sed eros. Nullam porttitor mattis mi, id fringilla ex consequat eu.
-            Praesent pulvinar tincidunt leo et condimentum. Maecenas volutpat
-            turpis at felis egestas malesuada. Phasellus sem odio, venenatis at
-            ex a, lacinia suscipit orci.
-          </p>
+          <!--/.socials-->
         </div>
+        <!--/.navbar-->
+      </header>
 
-        <div id="section2" class="section-content strategy">
-          <h2>MUSIC PLAYER APP</h2>
-          <div class="image-wrapper">
-            <img src="Projects/PlayerApp.png" alt="" />
+      <div class="process-wrapper">
+        <div id="progress-bar-container">
+          <ul>
+            <li class="step step01 active">
+              <div class="list-icon">
+                <img src="Icons/empty.png" alt="" />
+              </div>
+              <div class="step-inner">BEAUTY&CARE</div>
+            </li>
+            <li class="step step02">
+              <div class="list-icon">
+                <img src="Icons/empty.png" alt="" />
+              </div>
+              <div class="step-inner">MUSIC APP</div>
+            </li>
+            <li class="step step03">
+              <div class="list-icon">
+                <img src="Icons/empty.png" alt="" />
+              </div>
+              <div class="step-inner">Smart Watch</div>
+            </li>
+            <li class="step step04">
+              <div class="list-icon">
+                <img src="Icons/empty.png" alt="" />
+              </div>
+              <div class="step-inner">TESTIMONIALS</div>
+            </li>
+            <li class="step step05">
+              <div class="list-icon">
+                <img src="Icons/empty.png" alt="" />
+              </div>
+              <div class="step-inner">OUR LOCATIONS</div>
+            </li>
+            <li class="step step06">
+              <div class="list-icon">
+                <img src="Icons/empty.png" alt="" />
+              </div>
+              <div class="step-inner">OUR LOCATIONS</div>
+            </li>
+          </ul>
+
+          <div id="line">
+            <div id="line-progress"></div>
           </div>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque
-            justo, consequat non fermentum ac, tempor eu turpis. Proin nulla
-            eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in
-            dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut
-            sed eros. Nullam porttitor mattis mi, id fringilla ex consequat eu.
-            Praesent pulvinar tincidunt leo et condimentum. Maecenas volutpat
-            turpis at felis egestas malesuada. Phasellus sem odio, venenatis at
-            ex a, lacinia suscipit orci.
-          </p>
         </div>
 
-        <div id="section3" class="section-content creative">
-          <h2>Smart Watch Interface</h2>
-          <div class="image-wrapper">
-            <img src="Projects/AppleWatch.png" alt="" />
+        <div id="progress-content-section">
+          <div id="section1" class="section-content discovery active">
+            <h2>BEAUTY AND CARE APP</h2>
+            <div class="image-wrapper">
+              <img src="Projects/DoveApp.png" alt="" />
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+              neque justo, consequat non fermentum ac, tempor eu turpis. Proin
+              nulla eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla
+              in dapibus lorem. Suspendisse vitae velit ac ante consequat
+              placerat ut sed eros. Nullam porttitor mattis mi, id fringilla ex
+              consequat eu. Praesent pulvinar tincidunt leo et condimentum.
+              Maecenas volutpat turpis at felis egestas malesuada. Phasellus sem
+              odio, venenatis at ex a, lacinia suscipit orci.
+            </p>
           </div>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque
-            justo, consequat non fermentum ac, tempor eu turpis. Proin nulla
-            eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in
-            dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut
-            sed eros. Nullam porttitor mattis mi, id fringilla ex consequat eu.
-            Praesent pulvinar tincidunt leo et condimentum. Maecenas volutpat
-            turpis at felis egestas malesuada. Phasellus sem odio, venenatis at
-            ex a, lacinia suscipit orci.
-          </p>
-        </div>
 
-        <div class="section-content production">
-          <h2>TESTIMONIALS</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque
-            justo, consequat non fermentum ac, tempor eu turpis. Proin nulla
-            eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in
-            dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut
-            sed eros. Nullam porttitor mattis mi, id fringilla ex consequat eu.
-            Praesent pulvinar tincidunt leo et condimentum. Maecenas volutpat
-            turpis at felis egestas malesuada. Phasellus sem odio, venenatis at
-            ex a, lacinia suscipit orci.
-          </p>
-        </div>
+          <div id="section2" class="section-content strategy">
+            <h2>MUSIC PLAYER APP</h2>
+            <div class="image-wrapper">
+              <img src="Projects/PlayerApp.png" alt="" />
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+              neque justo, consequat non fermentum ac, tempor eu turpis. Proin
+              nulla eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla
+              in dapibus lorem. Suspendisse vitae velit ac ante consequat
+              placerat ut sed eros. Nullam porttitor mattis mi, id fringilla ex
+              consequat eu. Praesent pulvinar tincidunt leo et condimentum.
+              Maecenas volutpat turpis at felis egestas malesuada. Phasellus sem
+              odio, venenatis at ex a, lacinia suscipit orci.
+            </p>
+          </div>
 
-        <div class="section-content analysis">
-          <h2>OUR LOCATIONS</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque
-            justo, consequat non fermentum ac, tempor eu turpis. Proin nulla
-            eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in
-            dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut
-            sed eros. Nullam porttitor mattis mi, id fringilla ex consequat eu.
-            Praesent pulvinar tincidunt leo et condimentum. Maecenas volutpat
-            turpis at felis egestas malesuada. Phasellus sem odio, venenatis at
-            ex a, lacinia suscipit orci.
-          </p>
+          <div id="section3" class="section-content creative">
+            <h2>Smart Watch Interface</h2>
+            <div class="image-wrapper">
+              <img src="Projects/AppleWatch.png" alt="" />
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+              neque justo, consequat non fermentum ac, tempor eu turpis. Proin
+              nulla eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla
+              in dapibus lorem. Suspendisse vitae velit ac ante consequat
+              placerat ut sed eros. Nullam porttitor mattis mi, id fringilla ex
+              consequat eu. Praesent pulvinar tincidunt leo et condimentum.
+              Maecenas volutpat turpis at felis egestas malesuada. Phasellus sem
+              odio, venenatis at ex a, lacinia suscipit orci.
+            </p>
+          </div>
+
+          <div class="section-content production">
+            <h2>TESTIMONIALS</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+              neque justo, consequat non fermentum ac, tempor eu turpis. Proin
+              nulla eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla
+              in dapibus lorem. Suspendisse vitae velit ac ante consequat
+              placerat ut sed eros. Nullam porttitor mattis mi, id fringilla ex
+              consequat eu. Praesent pulvinar tincidunt leo et condimentum.
+              Maecenas volutpat turpis at felis egestas malesuada. Phasellus sem
+              odio, venenatis at ex a, lacinia suscipit orci.
+            </p>
+          </div>
+
+          <div class="section-content analysis">
+            <h2>OUR LOCATIONS</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+              neque justo, consequat non fermentum ac, tempor eu turpis. Proin
+              nulla eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla
+              in dapibus lorem. Suspendisse vitae velit ac ante consequat
+              placerat ut sed eros. Nullam porttitor mattis mi, id fringilla ex
+              consequat eu. Praesent pulvinar tincidunt leo et condimentum.
+              Maecenas volutpat turpis at felis egestas malesuada. Phasellus sem
+              odio, venenatis at ex a, lacinia suscipit orci.
+            </p>
+          </div>
         </div>
       </div>
     </div>
+    <!--/.main-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script>
@@ -503,6 +615,35 @@ p {
         $("#line-progress").css("width", "100%");
         $(".analysis").addClass("active").siblings().removeClass("active");
       });
+
+      /*Burger Menu*/
+      const navSlide = () => {
+        const burger = document.querySelector(".burger");
+        const nav = document.querySelector(".nav-links");
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        burger.addEventListener("click", () => {
+          //ToggleNav
+          nav.classList.toggle("nav-active");
+
+          //Nav-links
+          //Animate Links
+          navLinks.forEach((link, index) => {
+            if (link.style.animation) {
+              link.style.animation = "";
+            } else {
+              link.style.animation = `navLinkFade 0.5s ease forwards ${
+                index / 7 + 0.7
+              }s`;
+            }
+          });
+
+          //Burger animation
+          burger.classList.toggle("toggle");
+        });
+      };
+
+      navSlide();
     </script>
   </body>
 </html>
