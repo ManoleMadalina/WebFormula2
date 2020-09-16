@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Web Design</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Istok+Web:ital@0;1&family=Montserrat:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-size: 16px;
+        font-family: "Istok Web", sans-serif;
+        color: white;
+        background: rgb(32, 0, 47);
+        background: radial-gradient(
+          circle,
+          rgba(32, 0, 47, 1) 3%,
+          rgba(30, 3, 42, 1) 31%,
+          rgba(16, 0, 23, 1) 66%
+        );
+      }
+      *,
+      *::after,
+      *::before {
+        box-sizing: border-box;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p {
+        margin: 0;
+      }
+
+      header {
+        width: 100%;
+        padding: 20px 0;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        /*flex-direction: row-reverse;*/
+      }
+      .nav-links {
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        width: 33vw;
+        top: 76px;
+        background-color: rgba(32, 0, 47, 0.9);
+        z-index: 120;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(-300%);
+        transition: transform 0.5s ease-in;
+      }
+      .nav-link {
+        color: rgb(248, 248, 248);
+        text-decoration: none;
+        margin: 1.35em auto;
+        opacity: 0;
+        font-size: 25px;
+        transition: 0.25s;
+      }
+      .nav-link:hover {
+        color: rgb(236, 175, 236);
+      }
+      .nav-link--active {
+        color: rgb(236, 175, 236);
+      }
+      .burger {
+        display: block;
+        margin-left: 30px;
+        cursor: pointer;
+        z-index: 1000;
+      }
+      .burger div {
+        width: 25px;
+        height: 3px;
+        background-color: #f3f3f3;
+        margin: 5px;
+        transition: all 0.3s ease;
+      }
+      .socials {
+        display: flex;
+        z-index: 100;
+      }
+
+      .social-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-decoration: none;
+        width: 36px;
+        height: 36px;
+        margin: 0 20px;
+        border: 1px solid white;
+        border-radius: 50%;
+        transition: color 0.15s linear, background 0.15s linear;
+      }
+
+      .social-icon:hover {
+        color: #c675c4;
+        background-color: white;
+      }
+
+      .nav-active {
+        transform: translateX(-200%);
+      }
+
+      @keyframes navLinkFade {
+        from {
+          opacity: 0;
+          transform: translateX(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0px);
+        }
+      }
+
+      .toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+      }
+
+      .toggle .line2 {
+        opacity: 0;
+      }
+
+      .toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 55px;
+        font-weight: normal;
+        margin-bottom: 0;
+        background: -webkit-linear-gradient(#df42fe, #4a04d7);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #a525be, 0 0 0.5em #a525be,
+          0 0 0.1em #a525be;
+      }
+
+      /* --- Start progress bar --- */
+
+      .process-wrapper {
+        margin: auto;
+        max-width: 1080px;
+      }
+
+      #progress-bar-container {
+        position: relative;
+        width: 90%;
+        margin: auto;
+        height: 100px;
+        margin-top: 65px;
+      }
+
+      #progress-bar-container ul {
+        padding: 0;
+        margin: 0;
+        padding-top: 15px;
+        z-index: 9999;
+        position: absolute;
+        width: 100%;
+        margin-top: -40px;
+      }
+
+      /*#progress-bar-container li:before {
+        content: " ";
+        display: block;
+        margin: auto;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: solid 2px #aaa;
+        transition: all ease 0.3s;
+      }
+
+       #progress-bar-container li.active:before,
+      #progress-bar-container li:hover:before {
+        
+        border: none;
+        background: linear-gradient(
+          to right,
+          #e91ed8 0%,
+          rgb(159, 70, 201) 100%
+        );
+      }*/
+
+      #progress-bar-container li {
+        list-style: none;
+        float: left;
+        width: 15%;
+        text-align: center;
+        color: #aaa;
+        text-transform: uppercase;
+        font-size: 11px;
+        cursor: pointer;
+        font-weight: 700;
+        transition: all ease 0.2s;
+        vertical-align: bottom;
+        height: 82px;
+        position: relative;
+      }
+
+      #progress-bar-container li .step-inner {
+        position: absolute;
+        width: 100%;
+        bottom: 7px;
+        font-size: 14px;
+        margin-bottom: 5px;
+        margin-top: 5px;
+      }
+
+      #progress-bar-container li.active,
+      #progress-bar-container li:hover {
+        color: #b27ec2;
+      }
+
+      #progress-bar-container li:after {
+        content: " ";
+        display: block;
+        width: 6px;
+        height: 6px;
+        background: rgb(177, 33, 196);
+        margin: auto;
+        border: solid 7px #fff;
+        border-radius: 50%;
+        margin-top: 40px;
+        box-shadow: 0 2px 13px -1px rgba(0, 0, 0, 0.3);
+        transition: all ease 0.2s;
+        box-sizing: unset;
+      }
+
+      #progress-bar-container li:hover:after {
+        background: #555;
+      }
+
+      #progress-bar-container li.active:after {
+        background: #207893;
+      }
+
+      #progress-bar-container #line {
+        width: 75%;
+        margin: auto;
+        background: #eee;
+        height: 6px;
+        position: absolute;
+        left: 7%;
+        top: 57px;
+        z-index: 1;
+        border-radius: 50px;
+        transition: all ease 0.9s;
+      }
+
+      #progress-bar-container #line-progress {
+        content: " ";
+        width: 3%;
+        height: 100%;
+        background: #207893;
+        background: linear-gradient(to right, #d356c2 0%, #b949db 100%);
+        position: absolute;
+        z-index: 2;
+        border-radius: 50px;
+        transition: all ease 0.9s;
+      }
+
+      #progress-content-section {
+        width: 90%;
+        margin: auto;
+      }
+
+      #progress-content-section .section-content {
+        padding: 30px 40px;
+        text-align: center;
+        border-radius: 4px;
+        background: #f1f1f1;
+      }
+
+      #progress-content-section #section1 {
+        background: #f7e8e8;
+      }
+
+      #progress-content-section #section2 {
+        background: #f3f3f3;
+      }
+      #progress-content-section #section3 {
+        background: #fdab3e;
+      }
+
+      #progress-content-section .section-content h2 {
+        font-size: 30px;
+        text-transform: uppercase;
+
+        letter-spacing: 1px;
+        margin-bottom: 1em;
+      }
+
+      #progress-content-section .section-content p {
+        font-size: 16px;
+        line-height: 1.8em;
+        margin-top: 20px;
+      }
+      #progress-content-section .section-content a {
+        font-size: 18px;
+        transition: 0.15s;
+      }
+      #section1 h2,
+      #section1 p {
+        color: rgb(213, 139, 139);
+      }
+      #section1 a {
+        color: #fff;
+      }
+      #section1 a:hover {
+        color: rgb(250, 192, 255);
+      }
+
+      #progress-content-section .section-content {
+        display: none;
+        animation: FadeInUp 700ms ease 1;
+        animation-fill-mode: forwards;
+        transform: translateY(15px);
+        opacity: 0;
+      }
+
+      #progress-content-section .section-content.active {
+        display: block;
+      }
+      .image-wrapper {
+        width: 85%;
+        height: 510px;
+        margin: 0 auto 25px;
+      }
+      .image-wrapper img {
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+        border-radius: 20px;
+        box-shadow: 0px 8px 14px 0px #a580b6;
+      }
+      #section1 .image-wrapper img {
+        box-shadow: 0px 8px 14px 0px #ddc1c1ba;
+      }
+      #section2 .image-wrapper img {
+        box-shadow: 0px 8px 14px 0px #acacacb0;
+      }
+      #section3 .image-wrapper img {
+        box-shadow: 0px 8px 14px 0px #917325b3;
+      }
+
+      #section2 p,
+      #section2 h2 {
+        color: rgb(34, 34, 34);
+      }
+      #section2 a {
+        color: rgb(34, 34, 34);
+      }
+      #section2 a:hover {
+        color: rgb(70, 68, 70);
+      }
+      .list-icon {
+        margin: 0 auto;
+        width: 35px;
+        height: 35px;
+      }
+      .list-icon img {
+        width: 100%;
+        height: 100%;
+      }
+
+      @keyframes FadeInUp {
+        0% {
+          transform: translateY(15px);
+          opacity: 0;
+        }
+
+        100% {
+          transform: translateY(0px);
+          opacity: 1;
+        }
+      }
+    </style>
+    <script
+      src="https://kit.fontawesome.com/1b9a038306.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css"
+      media="all"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <div class="nav-links">
+          <a href="index.html" class="nav-link">ACASĂ</a>
+          <a href="appdesign.html" class="nav-link">APP DESIGN</a>
+          <a href="website.html" class="nav-link">WEBSITES</a>
+          <a href="graphicdesign.html" class="nav-link">GRAPHIC DESIGN</a>
+          <a href="3Dmodels.html" class="nav-link">3D MODELS</a>
+          <a href="webdesign.html" class="nav-link nav-link--active"
+            >WEBDESIGN</a
+          >
+        </div>
+
+        <!--Burger-menu-->
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+
+        <div class="socials">
+          <a href="#" class="social-icon">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="social-icon">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="mailto: WebFormulaTeam@gmail.com" class="social-icon">
+            <i class="fas fa-at"></i>
+          </a>
+        </div>
+        <!--/.socials-->
+      </div>
+      <!--/.navbar-->
+    </header>
+    <h1>Our Projects</h1>
+    <br />
+    <div class="process-wrapper">
+      <div id="progress-bar-container">
+        <ul>
+          <li class="step step01 active">
+            <div class="list-icon">
+              <img src="Icons/empty.png" alt="" />
+            </div>
+            <div class="step-inner">BEAUTY&CARE</div>
+          </li>
+          <li class="step step02">
+            <div class="list-icon">
+              <img src="Icons/empty.png" alt="" />
+            </div>
+            <div class="step-inner">MUSIC APP</div>
+          </li>
+          <li class="step step03">
+            <div class="list-icon">
+              <img src="Icons/empty.png" alt="" />
+            </div>
+            <div class="step-inner">Smart Watch</div>
+          </li>
+          <li class="step step04">
+            <div class="list-icon">
+              <img src="Icons/empty.png" alt="" />
+            </div>
+            <div class="step-inner">TESTIMONIALS</div>
+          </li>
+          <li class="step step05">
+            <div class="list-icon">
+              <img src="Icons/empty.png" alt="" />
+            </div>
+            <div class="step-inner">OUR LOCATIONS</div>
+          </li>
+          <li class="step step06">
+            <div class="list-icon">
+              <img src="Icons/empty.png" alt="" />
+            </div>
+            <div class="step-inner">OUR LOCATIONS</div>
+          </li>
+        </ul>
+
+        <div id="line">
+          <div id="line-progress"></div>
+        </div>
+      </div>
+
+      <div id="progress-content-section">
+        <div id="section1" class="section-content discovery active">
+          <h2>BEAUTY AND CARE APP</h2>
+          <div class="image-wrapper">
+            <img src="Projects/DoveApp.png" alt="" />
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque
+            justo, consequat non fermentum ac, tempor eu turpis. Proin nulla
+            eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in
+            dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut
+            sed eros. Nullam porttitor mattis mi, id fringilla ex consequat eu.
+            Praesent pulvinar tincidunt leo et condimentum. Maecenas volutpat
+            turpis at felis egestas malesuada. Phasellus sem odio, venenatis at
+            ex a, lacinia suscipit orci.
+          </p>
+        </div>
+
+        <div id="section2" class="section-content strategy">
+          <h2>MUSIC PLAYER APP</h2>
+          <div class="image-wrapper">
+            <img src="Projects/PlayerApp.png" alt="" />
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque
+            justo, consequat non fermentum ac, tempor eu turpis. Proin nulla
+            eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in
+            dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut
+            sed eros. Nullam porttitor mattis mi, id fringilla ex consequat eu.
+            Praesent pulvinar tincidunt leo et condimentum. Maecenas volutpat
+            turpis at felis egestas malesuada. Phasellus sem odio, venenatis at
+            ex a, lacinia suscipit orci.
+          </p>
+        </div>
+
+        <div id="section3" class="section-content creative">
+          <h2>Smart Watch Interface</h2>
+          <div class="image-wrapper">
+            <img src="Projects/AppleWatch.png" alt="" />
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque
+            justo, consequat non fermentum ac, tempor eu turpis. Proin nulla
+            eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in
+            dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut
+            sed eros. Nullam porttitor mattis mi, id fringilla ex consequat eu.
+            Praesent pulvinar tincidunt leo et condimentum. Maecenas volutpat
+            turpis at felis egestas malesuada. Phasellus sem odio, venenatis at
+            ex a, lacinia suscipit orci.
+          </p>
+        </div>
+
+        <div class="section-content production">
+          <h2>TESTIMONIALS</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque
+            justo, consequat non fermentum ac, tempor eu turpis. Proin nulla
+            eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in
+            dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut
+            sed eros. Nullam porttitor mattis mi, id fringilla ex consequat eu.
+            Praesent pulvinar tincidunt leo et condimentum. Maecenas volutpat
+            turpis at felis egestas malesuada. Phasellus sem odio, venenatis at
+            ex a, lacinia suscipit orci.
+          </p>
+        </div>
+
+        <div class="section-content analysis">
+          <h2>OUR LOCATIONS</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque
+            justo, consequat non fermentum ac, tempor eu turpis. Proin nulla
+            eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in
+            dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut
+            sed eros. Nullam porttitor mattis mi, id fringilla ex consequat eu.
+            Praesent pulvinar tincidunt leo et condimentum. Maecenas volutpat
+            turpis at felis egestas malesuada. Phasellus sem odio, venenatis at
+            ex a, lacinia suscipit orci.
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+      $(".step").click(function () {
+        $(this).addClass("active").prevAll().addClass("active");
+        $(this).nextAll().removeClass("active");
+      });
+
+      $(".step01").click(function () {
+        $("#line-progress").css("width", "3%");
+        $(".discovery").addClass("active").siblings().removeClass("active");
+      });
+
+      $(".step02").click(function () {
+        $("#line-progress").css("width", "20%");
+        $(".strategy").addClass("active").siblings().removeClass("active");
+      });
+
+      $(".step03").click(function () {
+        $("#line-progress").css("width", "40%");
+        $(".creative").addClass("active").siblings().removeClass("active");
+      });
+
+      $(".step04").click(function () {
+        $("#line-progress").css("width", "60%");
+        $(".production").addClass("active").siblings().removeClass("active");
+      });
+
+      $(".step05").click(function () {
+        $("#line-progress").css("width", "80%");
+        $(".analysis").addClass("active").siblings().removeClass("active");
+      });
+
+      $(".step06").click(function () {
+        $("#line-progress").css("width", "100%");
+        $(".analysis").addClass("active").siblings().removeClass("active");
+      });
+
+      /*Burger Menu*/
+      const navSlide = () => {
+        const burger = document.querySelector(".burger");
+        const nav = document.querySelector(".nav-links");
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        burger.addEventListener("click", () => {
+          //ToggleNav
+          nav.classList.toggle("nav-active");
+
+          //Nav-links
+          //Animate Links
+          navLinks.forEach((link, index) => {
+            if (link.style.animation) {
+              link.style.animation = "";
+            } else {
+              link.style.animation = `navLinkFade 0.5s ease forwards ${
+                index / 7 + 0.7
+              }s`;
+            }
+          });
+
+          //Burger animation
+          burger.classList.toggle("toggle");
+        });
+      };
+
+      navSlide();
+    </script>
+  </body>
+</html>
