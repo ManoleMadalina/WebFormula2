@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Document</title>
+    <title>Graphic Design</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Istok+Web:ital@0;1&family=Montserrat:wght@300;400&display=swap"
       rel="stylesheet"
@@ -22,50 +22,123 @@
         );
       }
       *,
-*::after,
-*::before {
-  box-sizing: border-box;
-}
+      *::after,
+      *::before {
+        box-sizing: border-box;
+      }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  margin: 0;
-}
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p {
+        margin: 0;
+      }
 
-    header {
-  height: fit-content;
-}
-.header-inner{
-  padding: 30px;
-}
-.header-title {
-  font-size: 40px;
-  font-weight: normal;
-  background: -webkit-linear-gradient(#e444ff, #4602d6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  line-height: 40px;
-}
-.header-link{
-  text-decoration: none;
-}
-.first-line {
-  display: flex;
-}
-.intro-logo {
-  width: 42px;
-  height: 42px;
-  margin-left: 7px;
-}
-.intro-logo img {
-  width: 100%;
-  height: 100%;
-}
+      header {
+        width: 100%;
+        padding: 20px 0;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        /*flex-direction: row-reverse;*/
+      }
+      .nav-links {
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        width: 33vw;
+        top: 76px;
+        background-color: rgba(32, 0, 47, 0.9);
+        z-index: 120;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(-300%);
+        transition: transform 0.5s ease-in;
+      }
+      .nav-link {
+        color: rgb(248, 248, 248);
+        text-decoration: none;
+        margin: 1.35em auto;
+        opacity: 0;
+        font-size: 25px;
+        transition: 0.25s;
+      }
+      .nav-link:hover {
+        color: rgb(236, 175, 236);
+      }
+      .nav-link--active {
+        color: rgb(236, 175, 236);
+      }
+      .burger {
+        display: block;
+        margin-left: 30px;
+        cursor: pointer;
+        z-index: 1000;
+      }
+      .burger div {
+        width: 25px;
+        height: 3px;
+        background-color: #f3f3f3;
+        margin: 5px;
+        transition: all 0.3s ease;
+      }
+      .socials {
+        display: flex;
+        z-index: 100;
+      }
+
+      .social-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-decoration: none;
+        width: 36px;
+        height: 36px;
+        margin: 0 20px;
+        border: 1px solid white;
+        border-radius: 50%;
+        transition: color 0.15s linear, background 0.15s linear;
+      }
+
+      .social-icon:hover {
+        color: #c675c4;
+        background-color: white;
+      }
+
+      .nav-active {
+        transform: translateX(-200%);
+      }
+
+      @keyframes navLinkFade {
+        from {
+          opacity: 0;
+          transform: translateX(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0px);
+        }
+      }
+
+      .toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+      }
+
+      .toggle .line2 {
+        opacity: 0;
+      }
+
+      .toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+      }
 
       h1 {
         text-align: center;
@@ -180,12 +253,12 @@ p {
       }
 
       #progress-bar-container #line {
-        width: 78%;
+        width: 76%;
         margin: auto;
         background: #eee;
         height: 6px;
         position: absolute;
-        left: 10%;
+        left: 12%;
         top: 57px;
         z-index: 1;
         border-radius: 50px;
@@ -209,30 +282,28 @@ p {
         margin: auto;
       }
 
-
-
       #progress-content-section .section-content {
         padding: 30px 40px;
         text-align: center;
         border-radius: 4px;
-        background:#f1f1f1;
+        background: #f1f1f1;
       }
 
-      #progress-content-section #section1{
-        background:#f3f3f3;
+      #progress-content-section #section1 {
+        background: #f3f3f3;
       }
 
-      #progress-content-section #section2{
-        background:#f3f3f3;
+      #progress-content-section #section2 {
+        background: #f3f3f3;
       }
-      #progress-content-section #section3{
-        background:#f3f3f3;
+      #progress-content-section #section3 {
+        background: #f3f3f3;
       }
 
       #progress-content-section .section-content h2 {
         font-size: 30px;
         text-transform: uppercase;
-        
+
         letter-spacing: 1px;
         margin-bottom: 1em;
       }
@@ -243,11 +314,11 @@ p {
         margin-top: 20px;
         margin-bottom: 20px;
       }
-      #progress-content-section .section-content a{
+      #progress-content-section .section-content a {
         font-size: 18px;
-        transition: .15s;
+        transition: 0.15s;
       }
-      
+
       #progress-content-section .section-content {
         display: none;
         animation: FadeInUp 700ms ease 1;
@@ -264,15 +335,16 @@ p {
         height: 510px;
         margin: 0 auto 25px;
       }
-      .image-wrapper.bigger-width{
-          width: 100%;
+      .image-wrapper.bigger-width {
+        width: 100%;
       }
-      .image-wrapper.flyer-width{
-          width: 80%;
+      .image-wrapper.flyer-width {
+        width: 80%;
       }
-      #banner2, #banner3{
-          width: 100%;
-          height: 365px;
+      #banner2,
+      #banner3 {
+        width: 100%;
+        height: 365px;
       }
       .image-wrapper img {
         width: 100%;
@@ -281,23 +353,26 @@ p {
         border-radius: 5px;
         box-shadow: 0px 8px 14px 0px #a580b6;
       }
-      #section1 .image-wrapper img{
+      #section1 .image-wrapper img {
         box-shadow: -1px 20px 14px -15px #cacacad9;
       }
-      #section2 .image-wrapper img{
+      #section2 .image-wrapper img {
         box-shadow: 0px 8px 14px 0px #acacacb0;
       }
-      #section3 .image-wrapper img{
+      #section3 .image-wrapper img {
         box-shadow: 0px 8px 14px 0px #b5b2abb3;
       }
-      #section1 h2, #section1 p{
+      #section1 h2,
+      #section1 p {
         color: rgb(111, 111, 111);
       }
-      
-      #section2 p, #section2 h2{
-        color:rgb(34, 34, 34);
+
+      #section2 p,
+      #section2 h2 {
+        color: rgb(34, 34, 34);
       }
-      #section3 p, #section3 h2{
+      #section3 p,
+      #section3 h2 {
         color: rgb(111, 111, 111);
       }
 
@@ -323,20 +398,51 @@ p {
         }
       }
     </style>
+    <script
+      src="https://kit.fontawesome.com/1b9a038306.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css"
+      media="all"
+      rel="stylesheet"
+    />
   </head>
   <body>
-     <header>
-        <div class="header-inner">
-          <a class="header-link" href="index.html">
-            <div class="first-line">
-                <p class="header-title">Web</p>
-                <div class="intro-logo">
-                  <img src="Images1/LOGO.png" alt="logo WebFormula" />
-                </div>
-              </div>
-              <p class="header-title">Formula</p></div>
-            </a>
+    <header>
+      <div class="navbar">
+        <div class="nav-links">
+          <a href="index.html" class="nav-link">ACASĂ</a>
+          <a href="appdesign.html" class="nav-link">APP DESIGN</a>
+          <a href="website.html" class="nav-link">WEBSITES</a>
+          <a href="graphicdesign.html" class="nav-link nav-link--active"
+            >GRAPHIC DESIGN</a
+          >
+          <a href="3Dmodels.html" class="nav-link">3D MODELS</a>
+          <a href="webdesign.html" class="nav-link">WEBDESIGN</a>
         </div>
+
+        <!--Burger-menu-->
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+
+        <div class="socials">
+          <a href="#" class="social-icon">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="social-icon">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="mailto: WebFormulaTeam@gmail.com" class="social-icon">
+            <i class="fas fa-at"></i>
+          </a>
+        </div>
+        <!--/.socials-->
+      </div>
+      <!--/.navbar-->
     </header>
     <h1>Our Projects</h1>
     <br />
@@ -429,7 +535,6 @@ p {
             ex a, lacinia suscipit orci.
           </p>
         </div>
-        
 
         <div id="section2" class="section-content strategy">
           <h2>FLYER DESIGN</h2>
@@ -476,7 +581,7 @@ p {
 
         <div id="section3" class="section-content creative">
           <h2>BANNER DESIGN</h2>
-          <div  class="image-wrapper">
+          <div class="image-wrapper">
             <img src="Projects/banner1.png" alt="" />
           </div>
           <p>
@@ -583,6 +688,35 @@ p {
         $("#line-progress").css("width", "100%");
         $(".analysis").addClass("active").siblings().removeClass("active");
       });*/
+
+      /*Burger Menu*/
+      const navSlide = () => {
+        const burger = document.querySelector(".burger");
+        const nav = document.querySelector(".nav-links");
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        burger.addEventListener("click", () => {
+          //ToggleNav
+          nav.classList.toggle("nav-active");
+
+          //Nav-links
+          //Animate Links
+          navLinks.forEach((link, index) => {
+            if (link.style.animation) {
+              link.style.animation = "";
+            } else {
+              link.style.animation = `navLinkFade 0.5s ease forwards ${
+                index / 7 + 0.7
+              }s`;
+            }
+          });
+
+          //Burger animation
+          burger.classList.toggle("toggle");
+        });
+      };
+
+      navSlide();
     </script>
   </body>
 </html>
