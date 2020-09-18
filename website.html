@@ -308,21 +308,54 @@
       #progress-content-section .section-content p {
         font-size: 16px;
         line-height: 1.8em;
-        margin-top: 20px;
+        margin: 20px 0;
       }
       #progress-content-section .section-content a {
         font-size: 18px;
         transition: 0.15s;
+        text-decoration: none;
+        padding: 0.6em 1.5em;
+        border-radius: 2em;
+        font-weight: 600;
+        margin-top: 20px;
+      }
+      .section-content1 {
+        display: flex;
+        margin-bottom: 20px;
+      }
+      .section-content1 p {
+        text-align: left;
+      }
+      .image-computer,
+      .image-phone {
+        width: 400px;
+        height: auto;
+      }
+      .image-computer img,
+      .image-phone img {
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
       }
       #section1 h2,
       #section1 p {
         color: rgb(255, 255, 255);
       }
       #section1 a {
-        color: #fff;
+        color: #ca9dd3;
+        background: linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 1) 0%,
+          rgba(255, 255, 255, 1) 8%,
+          rgba(246, 246, 246, 1) 73%,
+          rgba(237, 237, 237, 1) 100%
+        );
+        -webkit-box-shadow: 0px 46px 30px -36px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0px 46px 30px -36px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 15px 20px -16px rgba(0, 0, 0, 0.7);
       }
       #section1 a:hover {
-        color: rgb(250, 192, 255);
+        color: #a475ad;
       }
 
       #progress-content-section .section-content {
@@ -364,10 +397,15 @@
         color: rgb(34, 34, 34);
       }
       #section2 a {
-        color: rgb(34, 34, 34);
+        color: rgb(240, 240, 240);
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 152, 101, 1) 0%,
+          rgba(7, 168, 112, 1) 100%
+        );
       }
       #section2 a:hover {
-        color: rgb(70, 68, 70);
+        color: rgb(181, 231, 219);
       }
       .list-icon {
         margin: 0 auto;
@@ -377,6 +415,14 @@
       .list-icon img {
         width: 100%;
         height: 100%;
+      }
+      @media screen and (max-device-width: 450px) {
+        #bisous-width {
+          height: 540px;
+        }
+        #artofbloom-width {
+          height: 480px;
+        }
       }
 
       @keyframes FadeInUp {
@@ -424,7 +470,11 @@
           <a href="#" class="social-icon">
             <i class="fab fa-facebook-f"></i>
           </a>
-          <a href="#" class="social-icon">
+          <a
+            href="https://www.instagram.com/webformulateam/?hl=ru"
+            class="social-icon"
+            target="_blank"
+          >
             <i class="fab fa-instagram"></i>
           </a>
           <a href="mailto: WebFormulaTeam@gmail.com" class="social-icon">
@@ -489,21 +539,44 @@
           <div id="bisous-width" class="image-wrapper">
             <img src="Projects/bisous1.jpg" alt="Pastry Website Design" />
           </div>
+
+          <p>
+            Acest website a fost creat de echipa WebFormula de la 0 pentru
+            patiseria Bisous. La început, ne-am ocupat de design, atât pentru
+            laptop, cât și pentru alte dispozitive. Clientului i-au fost
+            prezentate mai multe variante ale viitorului website, dintre care
+            acesta l-a ales pe cel mai bun. Preferințele sale în materie de
+            paletă de culori și alte specificații au fost luate in considerție.
+            Dupa etapa respectivă, am trecut la realizarea propriu zisă a
+            site-ului.
+          </p>
+          <div class="section-content1">
+            <p class="text-content">
+              Site-ul are câteva pagini, printre care: pagina principala, pagina
+              cu produse și cea de contact. Pe pagina cu produse găsiți
+              categoriile respective, iar la un click se deschide conținutul
+              caracteristic categoriei. Astfel, pagina nu este supraîncărcată cu
+              prea multe informații.
+            </p>
+            <div class="image-computer">
+              <img src="Projects/bisous2.png" alt="bisous design responsive" />
+            </div>
+          </div>
+          <div class="section-content1">
+            <div class="image-phone">
+              <img src="Projects/bisous3.png" alt="bisous design responsive" />
+            </div>
+            <p class="text-content">
+              Design-ul website-ului este adaptabil la diferite device-uri,
+              printre care: laptop, iPad Pro, iPad și dispozitive mobile. Astfel
+              oricine are acces la conținutul acestuia.
+            </p>
+          </div>
           <a
             href="https://manolemadalina.github.io/Bisous/index.html"
             target="_blank"
             >Vezi website-ul aici</a
           >
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque
-            justo, consequat non fermentum ac, tempor eu turpis. Proin nulla
-            eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in
-            dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut
-            sed eros. Nullam porttitor mattis mi, id fringilla ex consequat eu.
-            Praesent pulvinar tincidunt leo et condimentum. Maecenas volutpat
-            turpis at felis egestas malesuada. Phasellus sem odio, venenatis at
-            ex a, lacinia suscipit orci.
-          </p>
         </div>
 
         <div id="section2" class="section-content strategy">
@@ -511,11 +584,7 @@
           <div id="artofbloom-width" class="image-wrapper">
             <img src="Projects/ArtOfBloom1.jpg" alt="Flower Store Website" />
           </div>
-          <a
-            href="https://manolemadalina.github.io/ArtOfBloom/index.html"
-            target="_blank"
-            >Vezi website-ul aici</a
-          >
+
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque
             justo, consequat non fermentum ac, tempor eu turpis. Proin nulla
@@ -526,6 +595,11 @@
             turpis at felis egestas malesuada. Phasellus sem odio, venenatis at
             ex a, lacinia suscipit orci.
           </p>
+          <a
+            href="https://manolemadalina.github.io/ArtOfBloom/index.html"
+            target="_blank"
+            >Vezi website-ul aici</a
+          >
         </div>
 
         <div class="section-content creative">
