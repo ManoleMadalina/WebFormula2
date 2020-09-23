@@ -50,7 +50,7 @@
       .nav-links {
         position: absolute;
         right: 0px;
-        height: 92vh;
+        height: 89.5vh;
         width: 33vw;
         top: 76px;
         background-color: rgba(32, 0, 47, 0.9);
@@ -59,7 +59,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        transform: translateX(-300%);
+        transform: translateX(-305%);
         transition: transform 0.5s ease-in;
       }
       .nav-link {
@@ -114,7 +114,7 @@
       }
 
       .nav-active {
-        transform: translateX(-200%);
+        transform: translateX(-205%);
       }
 
       @keyframes navLinkFade {
@@ -171,38 +171,15 @@
         padding: 0;
         margin: 0;
         padding-top: 15px;
-        z-index: 9999;
+        z-index: 100;
         position: absolute;
         width: 100%;
         margin-top: -40px;
       }
-
-      /*#progress-bar-container li:before {
-        content: " ";
-        display: block;
-        margin: auto;
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        border: solid 2px #aaa;
-        transition: all ease 0.3s;
-      }
-
-       #progress-bar-container li.active:before,
-      #progress-bar-container li:hover:before {
-        
-        border: none;
-        background: linear-gradient(
-          to right,
-          #e91ed8 0%,
-          rgb(159, 70, 201) 100%
-        );
-      }*/
-
       #progress-bar-container li {
         list-style: none;
         float: left;
-        width: 15%;
+        width: 20%;
         text-align: center;
         color: #aaa;
         text-transform: uppercase;
@@ -253,12 +230,12 @@
       }
 
       #progress-bar-container #line {
-        width: 75%;
+        width: 80%;
         margin: auto;
         background: #eee;
         height: 6px;
         position: absolute;
-        left: 7%;
+        left: 10%;
         top: 57px;
         z-index: 1;
         border-radius: 50px;
@@ -300,7 +277,7 @@
       #progress-content-section .section-content h2 {
         font-size: 30px;
         text-transform: uppercase;
-
+        color: #342734;
         letter-spacing: 1px;
         margin-bottom: 1em;
       }
@@ -309,6 +286,7 @@
         font-size: 16px;
         line-height: 1.8em;
         margin: 20px 0;
+        color: #342734;
       }
       #progress-content-section .section-content a {
         font-size: 18px;
@@ -321,24 +299,36 @@
       }
       .section-content1 {
         display: flex;
+        flex-direction: column;
+        align-items: center;
         margin-bottom: 20px;
       }
-      .section-content1 p {
-        text-align: left;
-      }
-      .image-computer,
-      .image-phone {
+
+      .image-computer {
         width: 400px;
         height: auto;
       }
+      .image-computer2 {
+        width: 480px;
+        height: auto;
+      }
+      .image-phone {
+        width: 370px;
+        height: auto;
+      }
       .image-computer img,
-      .image-phone img {
+      .image-phone img,
+      .image-computer2 img {
         width: 100%;
         height: 100%;
         max-width: 100%;
       }
-      #section1 h2,
-      #section1 p {
+      .image-phone img {
+        transform: translatey(0px);
+        animation: float 5s ease-in-out infinite;
+      }
+      #progress-content-section #section1 h2,
+      #progress-content-section #section1 p {
         color: rgb(255, 255, 255);
       }
       #section1 a {
@@ -381,6 +371,16 @@
         border-radius: 20px;
         box-shadow: 0px 8px 14px 0px #a580b6;
       }
+      .emoji-wrapper {
+        margin: 0 auto;
+        width: 120px;
+        height: auto;
+      }
+      .emoji-wrapper img {
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+      }
       #section2 .image-wrapper img {
         box-shadow: 0px 8px 14px 0px #acacacb0;
       }
@@ -392,8 +392,8 @@
         height: 500px;
       }
 
-      #section2 p,
-      #section2 h2 {
+      #progress-content-section #section2 p,
+      #progress-content-section #section2 h2 {
         color: rgb(34, 34, 34);
       }
       #section2 a {
@@ -416,6 +416,148 @@
         width: 100%;
         height: 100%;
       }
+      /***FOOTER*****/
+      .footer {
+        margin-top: 30px;
+      }
+      .footer-inner {
+        padding: 25px;
+        display: flex;
+      }
+
+      .footer-column1 {
+        width: 33.33%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .footer-title {
+        display: flex;
+        align-items: flex-end;
+      }
+
+      .footer-company {
+        margin-left: 15px;
+      }
+
+      .footer-name {
+        background: -webkit-linear-gradient(#e444ff, #4602d6);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: normal;
+        font-size: 45px;
+        line-height: 91%;
+        letter-spacing: 0.065em;
+      }
+
+      .copyrights {
+        margin-top: 30px;
+        color: rgba(255, 255, 255, 0.849);
+      }
+
+      .footer-column2 {
+        width: 33.33%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .footer-main {
+        text-transform: uppercase;
+        font-size: 35px;
+        font-weight: 300;
+        background: -webkit-linear-gradient(#cc39e6, #4b1cb1);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .footer-menu {
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: 300;
+        color: rgba(255, 255, 255, 0.849);
+        margin: 5px 0;
+        transition: 0.25s;
+      }
+
+      .footer-menu:hover {
+        color: #e19bee;
+      }
+
+      .footer-column3 {
+        width: 33.33%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .footer-socials1 {
+        display: flex;
+        margin-bottom: 25px;
+      }
+
+      .footer-social {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.849);
+        width: 40px;
+        height: 40px;
+        border: 1px solid rgba(255, 255, 255, 0.849);
+        border-radius: 50%;
+        margin: 0 10px;
+        transition: 0.25s;
+      }
+
+      .footer-social:hover {
+        background: rgba(255, 255, 255, 0.849);
+        color: #1c0128;
+      }
+
+      .footer-social i {
+        font-size: 18px;
+      }
+
+      .footer-line {
+        display: flex;
+        align-items: center;
+        margin: 10px 0;
+      }
+
+      .footer-line a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgba(248, 188, 238, 0.849);
+        border: 1px solid rgba(248, 188, 238, 0.849);
+        border-radius: 50%;
+        text-decoration: none;
+        margin-right: 10px;
+        width: 32px;
+        height: 32px;
+        transition: 0.25s;
+      }
+
+      .footer-line a i {
+        font-size: 18px;
+      }
+
+      .footer-line a:hover {
+        background: rgba(248, 188, 238, 0.849);
+        color: #1c0128;
+      }
+
+      .footer-info {
+        font-size: 18px;
+      }
       @media screen and (max-device-width: 450px) {
         #bisous-width {
           height: 540px;
@@ -434,6 +576,17 @@
         100% {
           transform: translateY(0px);
           opacity: 1;
+        }
+      }
+      @keyframes float {
+        0% {
+          transform: translatey(0px);
+        }
+        50% {
+          transform: translatey(-20px);
+        }
+        100% {
+          transform: translatey(0px);
         }
       }
     </style>
@@ -492,39 +645,33 @@
         <ul>
           <li class="step step01 active">
             <div class="list-icon">
-              <img src="Icons/cupcake.png" alt="" />
+              <img src="Icons/cupcake.png" alt="webdesign icon" />
             </div>
             <div class="step-inner">BISOUS</div>
           </li>
           <li class="step step02">
             <div class="list-icon">
-              <img src="Icons/floare.png" alt="" />
+              <img src="Icons/floare.png" alt="webdesign icon" />
             </div>
             <div class="step-inner">ART OF BLOOM</div>
           </li>
           <li class="step step03">
             <div class="list-icon">
-              <img src="Icons/empty.png" alt="" />
+              <img src="Icons/empty.png" alt="webdesign icon" />
             </div>
-            <div class="step-inner">Creative</div>
+            <div class="step-inner">SOON</div>
           </li>
           <li class="step step04">
             <div class="list-icon">
-              <img src="Icons/empty.png" alt="" />
+              <img src="Icons/empty.png" alt="webdesign icon" />
             </div>
-            <div class="step-inner">TESTIMONIALS</div>
+            <div class="step-inner">SOON</div>
           </li>
           <li class="step step05">
             <div class="list-icon">
-              <img src="Icons/empty.png" alt="" />
+              <img src="Icons/empty.png" alt="webdesign icon" />
             </div>
-            <div class="step-inner">OUR LOCATIONS</div>
-          </li>
-          <li class="step step06">
-            <div class="list-icon">
-              <img src="Icons/empty.png" alt="" />
-            </div>
-            <div class="step-inner">OUR LOCATIONS</div>
+            <div class="step-inner">SOON</div>
           </li>
         </ul>
 
@@ -546,25 +693,33 @@
             laptop, cât și pentru alte dispozitive. Clientului i-au fost
             prezentate mai multe variante ale viitorului website, dintre care
             acesta l-a ales pe cel mai bun. Preferințele sale în materie de
-            paletă de culori și alte specificații au fost luate in considerție.
-            Dupa etapa respectivă, am trecut la realizarea propriu zisă a
+            paletă de culori și alte specificații au fost luate în considerție.
+            După etapa respectivă, am trecut la realizarea propriu zisă a
             site-ului.
           </p>
           <div class="section-content1">
+            <div class="image-computer">
+              <img
+                src="Projects/bisous2.png"
+                alt="bisous webdesign responsive"
+              />
+            </div>
             <p class="text-content">
-              Site-ul are câteva pagini, printre care: pagina principala, pagina
+              Site-ul are câteva pagini, printre care: pagina principală, pagina
               cu produse și cea de contact. Pe pagina cu produse găsiți
               categoriile respective, iar la un click se deschide conținutul
               caracteristic categoriei. Astfel, pagina nu este supraîncărcată cu
-              prea multe informații.
+              prea multe informații. Logo-ul și alte ilustrații au fost de
+              asemenea realizate de către echipa noastră, astfel încât să
+              reflecte activitatea companiei.
             </p>
-            <div class="image-computer">
-              <img src="Projects/bisous2.png" alt="bisous design responsive" />
-            </div>
           </div>
           <div class="section-content1">
             <div class="image-phone">
-              <img src="Projects/bisous3.png" alt="bisous design responsive" />
+              <img
+                src="Projects/bisous31.png"
+                alt="bisous webdesign responsive"
+              />
             </div>
             <p class="text-content">
               Design-ul website-ului este adaptabil la diferite device-uri,
@@ -580,21 +735,52 @@
         </div>
 
         <div id="section2" class="section-content strategy">
-          <h2>FLORARIA ART OF BLOOM</h2>
+          <h2>FLORĂRIA ART OF BLOOM</h2>
           <div id="artofbloom-width" class="image-wrapper">
             <img src="Projects/ArtOfBloom1.jpg" alt="Flower Store Website" />
           </div>
 
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque
-            justo, consequat non fermentum ac, tempor eu turpis. Proin nulla
-            eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in
-            dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut
-            sed eros. Nullam porttitor mattis mi, id fringilla ex consequat eu.
-            Praesent pulvinar tincidunt leo et condimentum. Maecenas volutpat
-            turpis at felis egestas malesuada. Phasellus sem odio, venenatis at
-            ex a, lacinia suscipit orci.
+            Website-ul dat a fost creat de echipa WebFormula pentru un magazin
+            de plante de casă, care de asemenea oferă și servicii de design
+            interior utilizând producția proprie. Designul, precum și site-ul
+            propriu-zis, a fost realizat de compania noastră. Paleta de culori,
+            iconițele și ilustrațiile au fost alese astfel încât să reflecte
+            activitatea magazinului. Pe site sunt prezente link-uri către
+            rețelele de socializare ale companiei, precum și un formular de
+            abonare la newsletter.
           </p>
+          <div class="section-content1">
+            <div class="image-computer2">
+              <img
+                src="Projects/ArtOfBloom2.png"
+                alt="artofbloom webdesign responsive"
+              />
+            </div>
+            <p class="text-content">
+              Site-ul are mai multe pagini, printre care: pagina principală,
+              produse, proiecte, echipă și contact. Pe pagina cu produse este
+              disponibilă funția de search, pentru găsirea lucrurilor necesare
+              mai rapid. Pagina cu proiecte reprezintă portofoliul companiei, cu
+              mici descrieri pentru fiecare proiect, precum și recenzii din
+              partea clienților. Pagina de contact permite luarea legăturii cu
+              un reprezentant al companiei, pentru a oferi un feedback sau a
+              discuta alte aspecte.
+            </p>
+          </div>
+          <div class="section-content1">
+            <div class="image-phone">
+              <img
+                src="Projects/ArtOfBloom31.png"
+                alt="artofbloom webdesign responsive"
+              />
+            </div>
+            <p class="text-content">
+              Design-ul website-ului este adaptabil la diferite device-uri,
+              printre care: laptop, iPad Pro, iPad și dispozitive mobile. Astfel
+              oricine are acces la conținutul acestuia.
+            </p>
+          </div>
           <a
             href="https://manolemadalina.github.io/ArtOfBloom/index.html"
             target="_blank"
@@ -603,48 +789,105 @@
         </div>
 
         <div class="section-content creative">
-          <h2>Creative</h2>
+          <h2>Fără conținut</h2>
+          <div class="emoji-wrapper">
+            <img src="Icons/emoji.png" alt="emoji face" />
+          </div>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque
-            justo, consequat non fermentum ac, tempor eu turpis. Proin nulla
-            eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in
-            dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut
-            sed eros. Nullam porttitor mattis mi, id fringilla ex consequat eu.
-            Praesent pulvinar tincidunt leo et condimentum. Maecenas volutpat
-            turpis at felis egestas malesuada. Phasellus sem odio, venenatis at
-            ex a, lacinia suscipit orci.
+            Se pare că această secțiune este lipsită de conținut la moment, însă
+            în curând aici vor apărea noi proiecte. Ramâi cu noi și urmărește-ne
+            cum creștem și ne dezvoltăm!
           </p>
         </div>
 
         <div class="section-content production">
-          <h2>TESTIMONIALS</h2>
+          <h2>Fără conținut</h2>
+          <div class="emoji-wrapper">
+            <img src="Icons/emoji.png" alt="emoji face" />
+          </div>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque
-            justo, consequat non fermentum ac, tempor eu turpis. Proin nulla
-            eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in
-            dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut
-            sed eros. Nullam porttitor mattis mi, id fringilla ex consequat eu.
-            Praesent pulvinar tincidunt leo et condimentum. Maecenas volutpat
-            turpis at felis egestas malesuada. Phasellus sem odio, venenatis at
-            ex a, lacinia suscipit orci.
+            Se pare că această secțiune este lipsită de conținut la moment, însă
+            în curând aici vor apărea noi proiecte. Ramâi cu noi și urmărește-ne
+            cum creștem și ne dezvoltăm!
           </p>
         </div>
 
         <div class="section-content analysis">
-          <h2>OUR LOCATIONS</h2>
+          <h2>Fără conținut</h2>
+          <div class="emoji-wrapper">
+            <img src="Icons/emoji.png" alt="emoji face" />
+          </div>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque
-            justo, consequat non fermentum ac, tempor eu turpis. Proin nulla
-            eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in
-            dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut
-            sed eros. Nullam porttitor mattis mi, id fringilla ex consequat eu.
-            Praesent pulvinar tincidunt leo et condimentum. Maecenas volutpat
-            turpis at felis egestas malesuada. Phasellus sem odio, venenatis at
-            ex a, lacinia suscipit orci.
+            Se pare că această secțiune este lipsită de conținut la moment, însă
+            în curând aici vor apărea noi proiecte. Ramâi cu noi și urmărește-ne
+            cum creștem și ne dezvoltăm!
           </p>
         </div>
       </div>
     </div>
+    <!--FOOTER-->
+    <section class="footer">
+      <div class="footer-inner">
+        <div class="footer-column1">
+          <div class="footer-title">
+            <div class="footer-image">
+              <img src="Images1/LogoRaw.png" alt="webformula" />
+            </div>
+            <div class="footer-company">
+              <p class="footer-name">Web</p>
+              <p class="footer-name">Formula</p>
+            </div>
+          </div>
+          <!--/.footer-title-->
+          <p class="copyrights">© 2020 WebFormula.All rights reserved</p>
+        </div>
+        <!--/.footer-column1-->
+        <div class="footer-column2">
+          <p class="footer-main">CONTACT INFO</p>
+          <a href="index.html#intro" class="footer-menu">ACASĂ</a>
+          <a href="index.html#about" class="footer-menu">DESPRE NOI</a>
+          <a href="index.html#service" class="footer-menu">SERVICII</a>
+          <a href="index.html#portfolio" class="footer-menu">PROIECTE</a>
+          <a href="index.html#contact" class="footer-menu">CONTACT</a>
+        </div>
+        <!--/.footer-column2-->
+        <div class="footer-column3">
+          <div class="footer-socials1">
+            <a href="#" class="footer-social" target="_blank">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/webformulateam/?hl=ru"
+              class="footer-social"
+              target="_blank"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="footer-social" target="_blank">
+              <i class="fab fa-dribbble"></i>
+            </a>
+          </div>
+          <!--/.footer-socials1-->
+          <div class="footer-socials2">
+            <div class="footer-line">
+              <a href="mailto: WebFormulaTeam@gmail.com"
+                ><i class="fas fa-at"></i
+              ></a>
+              <p class="footer-info">webformulateam@gmail.com</p>
+            </div>
+            <div class="footer-line">
+              <a href="tel:+373 690 04 957"><i class="fas fa-phone"></i></a>
+              <p class="footer-info">
+                <span>+373 690 04 957/</span><span>+373 796 03 540</span>
+              </p>
+            </div>
+          </div>
+          <!--/.footer-socials2-->
+        </div>
+        <!--/.footer-column3-->
+      </div>
+      <!--/.footer-inner-->
+    </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script>
@@ -659,26 +902,21 @@
       });
 
       $(".step02").click(function () {
-        $("#line-progress").css("width", "20%");
+        $("#line-progress").css("width", "25%");
         $(".strategy").addClass("active").siblings().removeClass("active");
       });
 
       $(".step03").click(function () {
-        $("#line-progress").css("width", "40%");
+        $("#line-progress").css("width", "50%");
         $(".creative").addClass("active").siblings().removeClass("active");
       });
 
       $(".step04").click(function () {
-        $("#line-progress").css("width", "60%");
+        $("#line-progress").css("width", "75%");
         $(".production").addClass("active").siblings().removeClass("active");
       });
 
       $(".step05").click(function () {
-        $("#line-progress").css("width", "80%");
-        $(".analysis").addClass("active").siblings().removeClass("active");
-      });
-
-      $(".step06").click(function () {
         $("#line-progress").css("width", "100%");
         $(".analysis").addClass("active").siblings().removeClass("active");
       });
