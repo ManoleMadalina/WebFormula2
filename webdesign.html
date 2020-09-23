@@ -50,7 +50,7 @@
       .nav-links {
         position: absolute;
         right: 0px;
-        height: 92vh;
+        height: 89.5vh;
         width: 33vw;
         top: 76px;
         background-color: rgba(32, 0, 47, 0.9);
@@ -59,7 +59,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        transform: translateX(-300%);
+        transform: translateX(-305%);
         transition: transform 0.5s ease-in;
       }
       .nav-link {
@@ -114,7 +114,7 @@
       }
 
       .nav-active {
-        transform: translateX(-200%);
+        transform: translateX(-205%);
       }
 
       @keyframes navLinkFade {
@@ -171,7 +171,7 @@
         padding: 0;
         margin: 0;
         padding-top: 15px;
-        z-index: 9999;
+        z-index: 100;
         position: absolute;
         width: 100%;
         margin-top: -40px;
@@ -290,20 +290,20 @@
       }
 
       #progress-content-section #section1 {
-        background: #f7e8e8;
+        background: linear-gradient(to right, #ae58d2, #cd6eca);
       }
 
       #progress-content-section #section2 {
-        background: #f3f3f3;
+        background: #fffdfd;
       }
       #progress-content-section #section3 {
-        background: #fdab3e;
+        background: #efefef;
       }
 
       #progress-content-section .section-content h2 {
         font-size: 30px;
         text-transform: uppercase;
-
+        color: #342734;
         letter-spacing: 1px;
         margin-bottom: 1em;
       }
@@ -311,23 +311,22 @@
       #progress-content-section .section-content p {
         font-size: 16px;
         line-height: 1.8em;
-        margin-top: 20px;
-      }
-      #progress-content-section .section-content a {
-        font-size: 18px;
-        transition: 0.15s;
-      }
-      #section1 h2,
-      #section1 p {
-        color: rgb(213, 139, 139);
-      }
-      #section1 a {
-        color: #fff;
-      }
-      #section1 a:hover {
-        color: rgb(250, 192, 255);
+        margin: 20px 0;
+        color: #342734;
       }
 
+      #progress-content-section #section1 h2,
+      #progress-content-section #section1 p {
+        color: rgb(255, 255, 255);
+      }
+      #progress-content-section #section2 p,
+      #progress-content-section #section2 h2 {
+        color: rgb(100, 99, 99);
+      }
+      #progress-content-section #section3 h2,
+      #progress-content-section #section3 p {
+        color: #626262;
+      }
       #progress-content-section .section-content {
         display: none;
         animation: FadeInUp 700ms ease 1;
@@ -351,26 +350,29 @@
         border-radius: 20px;
         box-shadow: 0px 8px 14px 0px #a580b6;
       }
+      .emoji-wrapper {
+        margin: 0 auto;
+        width: 120px;
+        height: auto;
+      }
+      .emoji-wrapper img {
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+      }
       #section1 .image-wrapper img {
-        box-shadow: 0px 8px 14px 0px #ddc1c1ba;
+        box-shadow: 0px 35px 14px -25px #8d5aa2ba;
       }
       #section2 .image-wrapper img {
-        box-shadow: 0px 8px 14px 0px #acacacb0;
+        box-shadow: 0px 33px 20px -25px #dca1a1b0;
       }
       #section3 .image-wrapper img {
-        box-shadow: 0px 8px 14px 0px #917325b3;
+        box-shadow: 0px 8px 14px 0px #b7b7b7b3;
+      }
+      #section3 .image-wrapper #portfolio-image2 {
+        box-shadow: 0px 8px 14px 0px #52859052;
       }
 
-      #section2 p,
-      #section2 h2 {
-        color: rgb(34, 34, 34);
-      }
-      #section2 a {
-        color: rgb(34, 34, 34);
-      }
-      #section2 a:hover {
-        color: rgb(70, 68, 70);
-      }
       .list-icon {
         margin: 0 auto;
         width: 35px;
@@ -380,7 +382,148 @@
         width: 100%;
         height: 100%;
       }
+      /***FOOTER*****/
+      .footer {
+        margin-top: 30px;
+      }
+      .footer-inner {
+        padding: 25px;
+        display: flex;
+      }
 
+      .footer-column1 {
+        width: 33.33%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .footer-title {
+        display: flex;
+        align-items: flex-end;
+      }
+
+      .footer-company {
+        margin-left: 15px;
+      }
+
+      .footer-name {
+        background: -webkit-linear-gradient(#e444ff, #4602d6);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: normal;
+        font-size: 45px;
+        line-height: 91%;
+        letter-spacing: 0.065em;
+      }
+
+      .copyrights {
+        margin-top: 30px;
+        color: rgba(255, 255, 255, 0.849);
+      }
+
+      .footer-column2 {
+        width: 33.33%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .footer-main {
+        text-transform: uppercase;
+        font-size: 35px;
+        font-weight: 300;
+        background: -webkit-linear-gradient(#cc39e6, #4b1cb1);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .footer-menu {
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: 300;
+        color: rgba(255, 255, 255, 0.849);
+        margin: 5px 0;
+        transition: 0.25s;
+      }
+
+      .footer-menu:hover {
+        color: #e19bee;
+      }
+
+      .footer-column3 {
+        width: 33.33%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .footer-socials1 {
+        display: flex;
+        margin-bottom: 25px;
+      }
+
+      .footer-social {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.849);
+        width: 40px;
+        height: 40px;
+        border: 1px solid rgba(255, 255, 255, 0.849);
+        border-radius: 50%;
+        margin: 0 10px;
+        transition: 0.25s;
+      }
+
+      .footer-social:hover {
+        background: rgba(255, 255, 255, 0.849);
+        color: #1c0128;
+      }
+
+      .footer-social i {
+        font-size: 18px;
+      }
+
+      .footer-line {
+        display: flex;
+        align-items: center;
+        margin: 10px 0;
+      }
+
+      .footer-line a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgba(248, 188, 238, 0.849);
+        border: 1px solid rgba(248, 188, 238, 0.849);
+        border-radius: 50%;
+        text-decoration: none;
+        margin-right: 10px;
+        width: 32px;
+        height: 32px;
+        transition: 0.25s;
+      }
+
+      .footer-line a i {
+        font-size: 18px;
+      }
+
+      .footer-line a:hover {
+        background: rgba(248, 188, 238, 0.849);
+        color: #1c0128;
+      }
+
+      .footer-info {
+        font-size: 18px;
+      }
       @keyframes FadeInUp {
         0% {
           transform: translateY(15px);
@@ -450,39 +593,39 @@
         <ul>
           <li class="step step01 active">
             <div class="list-icon">
-              <img src="Icons/empty.png" alt="" />
+              <img src="Icons/empty.png" alt="webdesign icon" />
             </div>
-            <div class="step-inner">BEAUTY&CARE</div>
+            <div class="step-inner">CSS DESIGN</div>
           </li>
           <li class="step step02">
             <div class="list-icon">
-              <img src="Icons/empty.png" alt="" />
+              <img src="Icons/empty.png" alt="webdesign icon" />
             </div>
-            <div class="step-inner">MUSIC APP</div>
+            <div class="step-inner">FLOWER SHOP</div>
           </li>
           <li class="step step03">
             <div class="list-icon">
-              <img src="Icons/empty.png" alt="" />
+              <img src="Icons/empty.png" alt="webdesign icon" />
             </div>
-            <div class="step-inner">Smart Watch</div>
+            <div class="step-inner">PORTFOLIO</div>
           </li>
           <li class="step step04">
             <div class="list-icon">
-              <img src="Icons/empty.png" alt="" />
+              <img src="Icons/empty.png" alt="webdesign icon" />
             </div>
-            <div class="step-inner">TESTIMONIALS</div>
+            <div class="step-inner">SOON</div>
           </li>
           <li class="step step05">
             <div class="list-icon">
-              <img src="Icons/empty.png" alt="" />
+              <img src="Icons/empty.png" alt="webdesign icon" />
             </div>
-            <div class="step-inner">OUR LOCATIONS</div>
+            <div class="step-inner">SOON</div>
           </li>
           <li class="step step06">
             <div class="list-icon">
-              <img src="Icons/empty.png" alt="" />
+              <img src="Icons/empty.png" alt="webdesign icon" />
             </div>
-            <div class="step-inner">OUR LOCATIONS</div>
+            <div class="step-inner">SOON</div>
           </li>
         </ul>
 
@@ -493,85 +636,154 @@
 
       <div id="progress-content-section">
         <div id="section1" class="section-content discovery active">
-          <h2>BEAUTY AND CARE APP</h2>
+          <h2>CLOUD SECURITY SYSTEMS WEBDESIGN</h2>
           <div class="image-wrapper">
-            <img src="Projects/DoveApp.png" alt="" />
+            <img src="Projects/webdesign1.jpg" alt="webdesign" />
           </div>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque
-            justo, consequat non fermentum ac, tempor eu turpis. Proin nulla
-            eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in
-            dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut
-            sed eros. Nullam porttitor mattis mi, id fringilla ex consequat eu.
-            Praesent pulvinar tincidunt leo et condimentum. Maecenas volutpat
-            turpis at felis egestas malesuada. Phasellus sem odio, venenatis at
-            ex a, lacinia suscipit orci.
+            Acest design a fost elaborat pentru o companie ce oferă servicii
+            legate de securitatea sistemelor bazate pe cloud. Acesta se
+            deosebește prin culori plăcute, aprinse, capabile să capteze
+            atenția, precum și un contrast puternic, dar nu prea agresiv.
+            Modelul resprectiv poate fi adaptat pentru a prezenta diverse
+            afaceri legate de servicii și produse digitale.
           </p>
         </div>
 
         <div id="section2" class="section-content strategy">
-          <h2>MUSIC PLAYER APP</h2>
+          <h2>FLOWER SHOP WEBDESIGN</h2>
           <div class="image-wrapper">
-            <img src="Projects/PlayerApp.png" alt="" />
+            <img src="Projects/webdesign2.jpg" alt="webdesign" />
           </div>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque
-            justo, consequat non fermentum ac, tempor eu turpis. Proin nulla
-            eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in
-            dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut
-            sed eros. Nullam porttitor mattis mi, id fringilla ex consequat eu.
-            Praesent pulvinar tincidunt leo et condimentum. Maecenas volutpat
-            turpis at felis egestas malesuada. Phasellus sem odio, venenatis at
-            ex a, lacinia suscipit orci.
+            Designul respectiv reprezintă o copertă perfectă pentru o companie
+            ce se ocupă cu comercializarea și livrarea florilor. Acesta se
+            deosebește prin simplitate, minimalism, culori pastelate și plăcute.
           </p>
         </div>
 
         <div id="section3" class="section-content creative">
-          <h2>Smart Watch Interface</h2>
+          <h2>PORTFOLIO DESIGN</h2>
           <div class="image-wrapper">
-            <img src="Projects/AppleWatch.png" alt="" />
+            <img src="Projects/webdesign3.jpg" alt="webdesign portfolio" />
           </div>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque
-            justo, consequat non fermentum ac, tempor eu turpis. Proin nulla
-            eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in
-            dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut
-            sed eros. Nullam porttitor mattis mi, id fringilla ex consequat eu.
-            Praesent pulvinar tincidunt leo et condimentum. Maecenas volutpat
-            turpis at felis egestas malesuada. Phasellus sem odio, venenatis at
-            ex a, lacinia suscipit orci.
+            În acest exemplu este prezentat design-ul pentru un portfolio.
+            Ambele variante conțin forme abstracte, se bazează pe un gradient
+            aprins și contrast puternic, pentru a capta atenția și a trezi
+            interes. Aceste modele pot fi utilizate pentru website-uri cu
+            diverse tematici, deoarece nu reflectă direct subiectul la care
+            referă.
           </p>
+          <div class="image-wrapper">
+            <img
+              id="portfolio-image2"
+              src="Projects/webdesign31.jpg"
+              alt="webdesign portfolio"
+            />
+          </div>
         </div>
 
         <div class="section-content production">
-          <h2>TESTIMONIALS</h2>
+          <h2>Fără conținut</h2>
+          <div class="emoji-wrapper">
+            <img src="Icons/emoji.png" alt="emoji face" />
+          </div>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque
-            justo, consequat non fermentum ac, tempor eu turpis. Proin nulla
-            eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in
-            dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut
-            sed eros. Nullam porttitor mattis mi, id fringilla ex consequat eu.
-            Praesent pulvinar tincidunt leo et condimentum. Maecenas volutpat
-            turpis at felis egestas malesuada. Phasellus sem odio, venenatis at
-            ex a, lacinia suscipit orci.
+            Se pare că această secțiune este lipsită de conținut la moment, însă
+            în curând aici vor apărea noi proiecte. Ramâi cu noi și urmărește-ne
+            cum creștem și ne dezvoltăm!
           </p>
         </div>
 
         <div class="section-content analysis">
-          <h2>OUR LOCATIONS</h2>
+          <h2>Fără conținut</h2>
+          <div class="emoji-wrapper">
+            <img src="Icons/emoji.png" alt="emoji face" />
+          </div>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque
-            justo, consequat non fermentum ac, tempor eu turpis. Proin nulla
-            eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in
-            dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut
-            sed eros. Nullam porttitor mattis mi, id fringilla ex consequat eu.
-            Praesent pulvinar tincidunt leo et condimentum. Maecenas volutpat
-            turpis at felis egestas malesuada. Phasellus sem odio, venenatis at
-            ex a, lacinia suscipit orci.
+            Se pare că această secțiune este lipsită de conținut la moment, însă
+            în curând aici vor apărea noi proiecte. Ramâi cu noi și urmărește-ne
+            cum creștem și ne dezvoltăm!
+          </p>
+        </div>
+
+        <div class="section-content">
+          <h2>Fără conținut</h2>
+          <div class="emoji-wrapper">
+            <img src="Icons/emoji.png" alt="emoji face" />
+          </div>
+          <p>
+            Se pare că această secțiune este lipsită de conținut la moment, însă
+            în curând aici vor apărea noi proiecte. Ramâi cu noi și urmărește-ne
+            cum creștem și ne dezvoltăm!
           </p>
         </div>
       </div>
     </div>
+    <!--FOOTER-->
+    <section class="footer">
+      <div class="footer-inner">
+        <div class="footer-column1">
+          <div class="footer-title">
+            <div class="footer-image">
+              <img src="Images1/LogoRaw.png" alt="webformula" />
+            </div>
+            <div class="footer-company">
+              <p class="footer-name">Web</p>
+              <p class="footer-name">Formula</p>
+            </div>
+          </div>
+          <!--/.footer-title-->
+          <p class="copyrights">© 2020 WebFormula.All rights reserved</p>
+        </div>
+        <!--/.footer-column1-->
+        <div class="footer-column2">
+          <p class="footer-main">CONTACT INFO</p>
+          <a href="index.html#intro" class="footer-menu">ACASĂ</a>
+          <a href="index.html#about" class="footer-menu">DESPRE NOI</a>
+          <a href="index.html#service" class="footer-menu">SERVICII</a>
+          <a href="index.html#portfolio" class="footer-menu">PROIECTE</a>
+          <a href="index.html#contact" class="footer-menu">CONTACT</a>
+        </div>
+        <!--/.footer-column2-->
+        <div class="footer-column3">
+          <div class="footer-socials1">
+            <a href="#" class="footer-social" target="_blank">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/webformulateam/?hl=ru"
+              class="footer-social"
+              target="_blank"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="footer-social" target="_blank">
+              <i class="fab fa-dribbble"></i>
+            </a>
+          </div>
+          <!--/.footer-socials1-->
+          <div class="footer-socials2">
+            <div class="footer-line">
+              <a href="mailto: WebFormulaTeam@gmail.com"
+                ><i class="fas fa-at"></i
+              ></a>
+              <p class="footer-info">webformulateam@gmail.com</p>
+            </div>
+            <div class="footer-line">
+              <a href="tel:+373 690 04 957"><i class="fas fa-phone"></i></a>
+              <p class="footer-info">
+                <span>+373 690 04 957/</span><span>+373 796 03 540</span>
+              </p>
+            </div>
+          </div>
+          <!--/.footer-socials2-->
+        </div>
+        <!--/.footer-column3-->
+      </div>
+      <!--/.footer-inner-->
+    </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script>
