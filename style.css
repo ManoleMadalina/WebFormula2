@@ -1836,7 +1836,7 @@ form textarea {
   margin: 10px 0;
 }
 
-.footer-line a {
+.footer-line .footer-link {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1854,13 +1854,23 @@ form textarea {
   font-size: 18px;
 }
 
-.footer-line a:hover {
+.footer-line .footer-link:hover {
   background: rgba(248, 188, 238, 0.849);
   color: #1c0128;
 }
 
+.phone-numbers {
+  display: flex;
+}
+
 .footer-info {
+  color: rgba(255, 255, 255, 0.849);
   font-size: 18px;
+  transition: .2s;
+}
+
+.footer-info:hover {
+  color: rgba(248, 188, 238, 0.849);
 }
 
 #btnScrollToTop {
