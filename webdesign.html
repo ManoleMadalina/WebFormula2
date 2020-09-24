@@ -494,32 +494,42 @@
         margin: 10px 0;
       }
 
-      .footer-line a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: rgba(248, 188, 238, 0.849);
-        border: 1px solid rgba(248, 188, 238, 0.849);
-        border-radius: 50%;
-        text-decoration: none;
-        margin-right: 10px;
-        width: 32px;
-        height: 32px;
-        transition: 0.25s;
-      }
+      .footer-line .footer-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(248, 188, 238, 0.849);
+  border: 1px solid rgba(248, 188, 238, 0.849);
+  border-radius: 50%;
+  text-decoration: none;
+  margin-right: 10px;
+  width: 32px;
+  height: 32px;
+  transition: 0.25s;
+}
 
-      .footer-line a i {
-        font-size: 18px;
-      }
+.footer-line a i {
+  font-size: 18px;
+}
 
-      .footer-line a:hover {
-        background: rgba(248, 188, 238, 0.849);
-        color: #1c0128;
-      }
+.footer-line .footer-link:hover {
+  background: rgba(248, 188, 238, 0.849);
+  color: #1c0128;
+}
 
-      .footer-info {
-        font-size: 18px;
-      }
+.phone-numbers {
+  display: flex;
+}
+
+.footer-info {
+  color: rgba(255, 255, 255, 0.849);
+  font-size: 18px;
+  transition: .2s;
+}
+
+.footer-info:hover {
+  color: rgba(248, 188, 238, 0.849);
+}
       @keyframes FadeInUp {
         0% {
           transform: translateY(15px);
@@ -767,18 +777,14 @@
           <!--/.footer-socials1-->
           <div class="footer-socials2">
             <div class="footer-line">
-              <a href="mailto: WebFormulaTeam@gmail.com"
-                ><i class="fas fa-at"></i
-              ></a>
-              <p class="footer-info">webformulateam@gmail.com</p>
+              <a class="footer-link" href="mailto: WebFormulaTeam@gmail.com"><i class="fas fa-at"></i></a>
+              <a class="footer-info" href="mailto: WebFormulaTeam@gmail.com">webformulateam@gmail.com</a>
             </div>
             <div class="footer-line">
-              <a href="tel:+373 690 04 957"><i class="fas fa-phone"></i></a>
-              <p class="footer-info">
-                <span>+373 690 04 957/</span><span>+373 796 03 540</span>
-              </p>
+              <a class="footer-link" href="tel:+373 690 04 957"><i class="fas fa-phone"></i></a>
+              <div class="phone-numbers">
+              <a href="tel:+373 690 04 957" class="footer-info">+373 690 04 957</a>/<a href="tel:+373 796 03 540" class="footer-info">+373 796 03 540</a></div>
             </div>
-          </div>
           <!--/.footer-socials2-->
         </div>
         <!--/.footer-column3-->
